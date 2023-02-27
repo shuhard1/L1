@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//неизвестный сервис
 type Windows struct{}
 
 func (w *Windows) insertIntoUSBPort() {

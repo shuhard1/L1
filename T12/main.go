@@ -3,14 +3,14 @@ package main
 import "fmt"
 
 func newSet(slice []string) []string {
-	resMap := make(map[string]bool)
+	resMap := make(map[string]struct{})
 	result := []string{}
-
+	//ключ не может повторятся, поэтому
+	//так можно получить только уникальные элементы в слайсе
 	for _, key := range slice {
-		resMap[key] = true
+		resMap[key] = struct{}{}
 	}
-	//ключ не может повторятся - в этом прикол
-	//так можно найти повторы в слайсе
+	//записываем ключи resMap в слайс
 	for key := range resMap {
 		result = append(result, key)
 	}

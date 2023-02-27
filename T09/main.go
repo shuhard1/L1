@@ -5,21 +5,26 @@ func main() {
 	firstCh := make(chan int)
 	secondCh := make(chan int)
 
+	//в firstCh пишутся числа из массива nums
 	go func() {
-		for _, n := range nums {
-			firstCh <- n
+		for _, x := range nums {
+			firstCh <- x
 		}
 		close(firstCh)
 	}()
 
 	go func() {
-		for n := range firstCh {
-			secondCh <- n * 2
+		//читает из канала, пока он не будет закрыт
+		for x := range firstCh {
+			//в secondCh пишется результат операции x*2
+			secondCh <- x * 2
 		}
 		close(secondCh)
 	}()
 
+	//читает из канала, пока он не будет закрыт
 	for n := range secondCh {
+		//вывод в stdout
 		println(n)
 	}
 }

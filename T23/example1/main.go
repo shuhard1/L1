@@ -2,16 +2,15 @@ package main
 
 import "fmt"
 
-//Fast version (changes order)
-
+//не сохраняет порядок
 func main() {
-	a := []string{"A", "B", "C", "D", "E"}
+	sl := []string{"A", "B", "C", "D", "E"}
 	i := 2
 
-	// Remove the element at index i from a.
-	a[i] = a[len(a)-1] // Copy last element to index i.
-	a[len(a)-1] = ""   // Erase last element (write zero value).
-	a = a[:len(a)-1]   // Truncate slice.
+	//копирую последний элемент в a[i]
+	sl[i] = sl[len(sl)-1] //{"A", "B", "E", "D", "E"}
+	//Обрезаем последний элемент в слайсе
+	sl = sl[:len(sl)-1] //{"A", "B", "E", "D"}
 
-	fmt.Println(a) // [A B E D]
+	fmt.Println(sl)
 }

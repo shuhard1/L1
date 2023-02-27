@@ -2,8 +2,9 @@ package main
 
 import "fmt"
 
+//меняет местами a и b
 func swap(a, b int) {
-	fmt.Printf("Before swapping, numbers are %d and %d\n", a, b)
+	fmt.Printf("a - %d b - %d\n", a, b)
 	//a=23
 	//b=45
 	b = a + b //23+45=68
@@ -11,7 +12,7 @@ func swap(a, b int) {
 	b = b - a //68-45=23
 	//a=45
 	//b=23
-	fmt.Printf("After swapping, numbers are %d and %d\n", a, b)
+	fmt.Printf("a - %d b - %d\n", a, b)
 }
 
 func main() {

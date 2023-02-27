@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//Сервис
 type Mac struct {
 }
 

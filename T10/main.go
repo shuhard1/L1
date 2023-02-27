@@ -13,8 +13,11 @@ func main() {
 	PlusTwenty := []float64{}
 	MinusTwenty := []float64{}
 
-	for _, number := range numbers { //цикл проходится по срезу numbers
-		if number > 30.0 && number < 40.0 { //проверка элемента
+	// проходимся по слайсу numbers
+	for _, number := range numbers {
+		//проверяем каждый элемент слайса numbers
+		//и добавляем в нужный слайс
+		if number > 30.0 && number < 40.0 {
 			PlusThirty = append(PlusThirty, number)
 		} else if number > 20.0 && number < 30.0 {
 			PlusTwenty = append(PlusTwenty, number)
@@ -24,19 +27,9 @@ func main() {
 			MinusTwenty = append(MinusTwenty, number)
 		}
 	}
-	fmt.Print("(-20:{")
-	printSlice(MinusTwenty)
 
-	fmt.Print("(10:{")
-	printSlice(PlusTen)
-
-	fmt.Print("(20:{")
-	printSlice(PlusTwenty)
-
-	fmt.Print("(30:{")
-	printSlice(PlusThirty)
-}
-
-func printSlice(s []float64) {
-	fmt.Printf("%v\n", s) // вывод среза в консоль
+	fmt.Printf("-20:%v\n", MinusTwenty)
+	fmt.Printf("10:%v\n", PlusTen)
+	fmt.Printf("20:%v\n", PlusTwenty)
+	fmt.Printf("30:%v\n", PlusThirty)
 }
